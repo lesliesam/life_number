@@ -7,12 +7,12 @@
   justify-content: stretch;
 }
 
-.birthday_select {
+.select_bar {
   display: flex;
-  background: red;
-  flex-direction: column
+  flex-direction: row;
 }
 
-.calculate {
-  margin-top: 20px;
+.birthday_select {
+  display: block;
 }
+

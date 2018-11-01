@@ -4,11 +4,12 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    birthday: '1988-08-08',
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    birthday: '1981-09-27',
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    showResult: false,
+    lifeNumberParams: {},
   },
   //事件处理函数
   bindViewTap: function() {
@@ -57,5 +58,55 @@ Page({
     this.setData({
       birthday: e.detail.value
     })
+  },
+  showResult: function (e) {
+    console.log('show result.')
+    this.setData({
+      showResult: true
+    })
+    this.calculateResult();
+  },
+  calculateResult: function() {
+    // 拆分年月日
+    var birthday = this.data.birthday.split('-')
+    var year = birthday[0]
+    var month = birthday[1]
+    var day = birthday[2]
+
+    // 拆分年成为两部分，1988 -> 19 和 88
+    var year1 = year.substring(0, 2)
+    var year2 = year.substring(2)
+
+    // 根据生日构造所有参数
+    var params = this.data.lifeNumberParams
+    params.aa = parseInt(day)
+    params.bb = parseInt(month)
+    params.cc = parseInt(year1)
+    params.dd = parseInt(year2)
+    params.ee = this.numberAdd(params.aa);
+    params.ff = this.numberAdd(params.bb);
+    params.gg = this.numberAdd(params.cc);
+    params.hh = this.numberAdd(params.dd);
+    params.ii = this.numberAdd(params.ee + params.ff);
+    params.jj = this.numberAdd(params.gg + params.hh);
+    params.kk = this.numberAdd(params.ii + params.jj);
+    params.ll = this.numberAdd(params.jj + params.kk);
+    params.mm = this.numberAdd(params.ii + params.kk);
+    params.nn = this.numberAdd(params.ll + params.mm);
+    params.oo = this.numberAdd(params.ee + params.ii);
+    params.pp = this.numberAdd(params.ff + params.ii);
+    params.qq = this.numberAdd(params.oo + params.pp);
+    params.rr = this.numberAdd(params.gg + params.jj);
+    params.ss = this.numberAdd(params.hh + params.jj);
+    params.tt = this.numberAdd(params.rr + params.ss);
+
+    console.log(this.data.lifeNumberParams);
+  },
+  numberAdd: function(oldNum) {
+    var tempNum = parseInt(oldNum / 10) + oldNum % 10
+    while (tempNum >= 10) {
+      tempNum = this.numberAdd(tempNum);
+    }
+    return tempNum;
   }
 })
