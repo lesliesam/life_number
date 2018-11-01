@@ -1,13 +1,15 @@
 <!--index.wxml-->
-<view >
- <view class="flex-row" style="display: flex;flex-direction: row;">
-<view class="flex-view-item">1</view>
-<view class="flex-view-item">2</view>
-<view class="flex-view-item">3</view>
- </view>
- <view class="flex-column" style="display:flex;flex-direction: column;" >
-<view class="flex-view-item">c1</view>
-<view class="flex-view-item">c2</view>
-<view class="flex-view-item">c3</view>
- </view>
+<view class='container'>
+  <view class="birthday_select">
+    <view class="birthday__title">请选择正确的阳历日期：</view>
+    <picker mode="date" value="{{birthday}}" start="1900-01-01" end="2017-09-01" bindchange="bindDateChange">
+      <view class="picker">
+        {{birthday}}
+      </view>
+    </picker>
+  </view>
+
+  <button class='calculate'>开始计算
+  </button>
+
 </view>
