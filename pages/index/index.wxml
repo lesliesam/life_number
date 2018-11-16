@@ -37,7 +37,9 @@
       </view>
     </view>
 
-
+    <button class='share' open-type='share'>
+    分享
+    </button>
     <view class='resultRow'> 
       <view class='resultTitle'>主性格</view>
       <view class='resultContent'>{{lifeNumberResults.zxg}}</view>

@@ -21,7 +21,7 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function (params) {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -48,6 +48,17 @@ Page({
         }
       })
     }
+    
+    // Load the given share data
+    if (params.birthday) {
+      this.setData({
+        birthday: params.birthday
+      })
+      this.calculateResult();
+      this.setData({
+        showResult: true
+      })
+    }
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -62,6 +73,9 @@ Page({
     this.setData({
       birthday: e.detail.value
     })
+    if (this.data.showResult) {
+      this.calculateResult();
+    }
   },
   showResult: function (e) {
     console.log('show result.')
@@ -167,5 +181,19 @@ Page({
   },
   stringAdd: function(...params) {
     return params.join('');
+  },
+  onShareAppMessage: function (ops) {
+    return {
+      title: '生命数字密码计算器',
+      path: 'pages/index/index?birthday=' + this.data.birthday,
+      success: function (res) {
+        // 转发成功
+        console.log("转发成功:" + JSON.stringify(res));
+      },
+      fail: function (res) {
+        // 转发失败
+        console.log("转发失败:" + JSON.stringify(res));
+      }
+    }
   }
 })

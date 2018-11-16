@@ -20,6 +20,11 @@
   color: blue
 }
 
+.calculate {
+  background-color: rgb(1, 189, 1);
+  color: white;
+}
+
 .resultContainer {
   align-self: stretch;
   margin: 20px;
@@ -46,6 +51,7 @@
 .diagramUnitRect {
   height: 32px;
   width: 32px;
+  margin: 2px;
   border: thin solid rgb(184, 183, 183);
   display: flex;
   align-items: center;
@@ -55,6 +61,7 @@
 .diagramUnitRound {
   height: 32px;
   width: 32px;
+  margin: 2px;
   border: thin solid rgb(248, 70, 70);
   border-radius: 16px;
   display: flex;
@@ -80,4 +87,8 @@
 
 .codeContainer {
   align-self: stretch
+}
+
+.share {
+  align-self: flex-start
 }
