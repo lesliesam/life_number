@@ -185,15 +185,7 @@ Page({
   onShareAppMessage: function (ops) {
     return {
       title: '生命数字密码计算器',
-      path: 'pages/index/index?birthday=' + this.data.birthday,
-      success: function (res) {
-        // 转发成功
-        console.log("转发成功:" + JSON.stringify(res));
-      },
-      fail: function (res) {
-        // 转发失败
-        console.log("转发失败:" + JSON.stringify(res));
-      }
+      path: 'pages/index/index?birthday=' + this.data.birthday
     }
   }
 })

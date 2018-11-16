@@ -32,9 +32,6 @@ App({
         }
       }
     })
-    wx.showShareMenu({
-      withShareTicket: true
-    })
   },
   globalData: {
     userInfo: null
