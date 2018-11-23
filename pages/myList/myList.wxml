@@ -1,0 +1,14 @@
+<view class='container'>
+
+  <view wx:for="{{numberList}}" wx:key="{{index}}" class='listContainer'>
+    <view class='oneLine'>生日: {{item.birthday}}</view>
+    <view class='oneLine'>
+      <view class='infoItem'>姓名: {{item.name?item.name:'-'}}</view>
+      <view class='infoItem'>性别: {{item.sex?item.sex:'-'}}</view>
+      <button class='editButton' id='{{index}}' bindtap='editItem'>编辑</button>
+    </view>
+    <view class='aline'></view>
+  </view>
+
+</view>
+

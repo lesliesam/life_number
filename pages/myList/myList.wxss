@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.listContainer {
+  align-self: stretch;
+}
+
+.oneLine {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.aline {
+  background-color: grey;
+  height: 1px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.infoItem {
+  font-size: 14px;
+  color: darkgray;
+}
+
+.editButton {
+  background-color: rgb(1, 189, 1);
+  color: white;
+  margin-left: 0px;
+  margin-right: 0px;
+
+}

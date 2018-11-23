@@ -89,6 +89,12 @@
   align-self: stretch
 }
 
+.actionButtons {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
 .share {
   align-self: flex-start
 }

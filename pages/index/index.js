@@ -187,5 +187,22 @@ Page({
       title: '生命数字密码计算器',
       path: 'pages/index/index?birthday=' + this.data.birthday
     }
-  }
+  },
+  storeResult: function(e) {
+    var self = this
+    const db = wx.cloud.database()
+    db.collection('number').add({
+      data: {
+        birthday: this.data.birthday
+      },
+      success: function(res) {
+        wx.showModal({
+          title: '收藏成功',
+          content: '提示：您可以进入我的收藏进行更多的编辑。',
+          showCancel: false,
+        })
+      },
+
+    })
+  },
 })

@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/myList/myList",
     "pages/logs/logs"
   ],
   "window":{
@@ -8,5 +9,17 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "生命数字密码计算器",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "计算器"
+      },
+      {
+        "pagePath": "pages/myList/myList",
+        "text": "我的收藏"
+      }
+    ]
   }
 }
