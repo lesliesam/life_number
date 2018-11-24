@@ -9,6 +9,12 @@
   align-self: stretch;
 }
 
+.flexContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .oneLine {
   display: flex;
   flex-direction: row;

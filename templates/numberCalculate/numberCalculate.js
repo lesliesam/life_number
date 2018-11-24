@@ -101,7 +101,8 @@ const actions = {
     const db = wx.cloud.database()
     db.collection('number').add({
       data: {
-        birthday: this.data.birthday
+        birthday: this.data.birthday,
+        createDate: new Date()
       },
       success: function (res) {
         wx.showModal({

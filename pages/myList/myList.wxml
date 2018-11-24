@@ -7,8 +7,15 @@
     <view wx:for="{{numberList}}" wx:key="{{index}}">
       <view class='oneLine'>生日: {{item.birthday}}</view>
       <view class='oneLine'>
-        <view class='infoItem'>姓名: {{item.name?item.name:'-'}}</view>
-        <view class='infoItem'>性别: {{item.sexIndex?sexes[item.sexIndex]:'-'}}</view>
+        <view class='flexContainer'>
+          <view class='oneLine'>
+            <view class='infoItem'>姓名: {{item.name?item.name:'-'}}</view>
+            <view class='infoItem'>性别: {{item.sexIndex?sexes[item.sexIndex]:'-'}}</view>
+          </view>
+          <view class='oneLine'>
+            <view class='infoItem'>年龄: {{item.age}}</view>
+          </view>
+        </view>
         <button class='editButton' id='{{index}}' bindtap='editItem'>编辑</button>
       </view>
       <view class='aline'></view>
