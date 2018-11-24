@@ -1,4 +1,6 @@
 //app.js
+import RelativeTime from './libs/relativeTime.js'
+
 App({
   onLaunch: function () {
     // 展示本地存储能力

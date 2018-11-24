@@ -37,6 +37,12 @@
   color: darkgray;
 }
 
+.timeItem {
+  font-size: 10px;
+  color: darkgray;
+  font-style: italic;
+}
+
 .editButton {
   background-color: rgb(1, 189, 1);
   color: white;

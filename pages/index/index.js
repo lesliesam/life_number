@@ -8,7 +8,7 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    birthday: '1981-09-27',
+    birthday: '1980-01-01',
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     showResult: false,
     lifeNumberParams: {},

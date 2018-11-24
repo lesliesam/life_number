@@ -24,6 +24,7 @@ Page({
         wx.hideLoading();
         for (var i = 0; i < res.data.length; i ++) {
           res.data[i].age = self.getAge(res.data[i].birthday)
+          res.data[i].relativeTime = new Date(res.data[i].createDate).toRelativeTime()
         }
 
         self.setData({
