@@ -15,9 +15,13 @@ Page({
   },
   onShow: function () {
     var self = this
+    wx.showLoading({
+      title: '加载中',
+    })
     const db = wx.cloud.database()
     db.collection('number').get({
       success: function (res) {
+        wx.hideLoading();
         for (var i = 0; i < res.data.length; i ++) {
           res.data[i].age = self.getAge(res.data[i].birthday)
         }
@@ -26,6 +30,9 @@ Page({
           numberList: res.data
         })
         console.log(self.data.numberList)
+      },
+      fail: function(res) {
+        wx.hideLoading();
       }
     })
   },

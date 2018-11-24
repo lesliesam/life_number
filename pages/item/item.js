@@ -68,6 +68,9 @@ Page({
 
   bindSave: function(e) {
     var self = this
+    wx.showLoading({
+      title: '保存中',
+    })
     const db = wx.cloud.database()
     db.collection('number').doc(this.data.itemInfo._id).update({
       data: {
@@ -75,6 +78,7 @@ Page({
         sexIndex: this.data.sexIndex,
       },
       success: function (res) {
+        wx.hideLoading();
         wx.showModal({
           title: '保存完成',
           showCancel: false,
@@ -83,8 +87,10 @@ Page({
         self.setData({
           showSaveButton: false
         })
-
       },
+      fail: function(res) {
+        wx.hideLoading();
+      }
     })
   },
 
