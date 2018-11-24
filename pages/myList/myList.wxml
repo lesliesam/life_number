@@ -1,14 +1,18 @@
 <view class='container'>
-
-  <view wx:for="{{numberList}}" wx:key="{{index}}" class='listContainer'>
-    <view class='oneLine'>生日: {{item.birthday}}</view>
-    <view class='oneLine'>
-      <view class='infoItem'>姓名: {{item.name?item.name:'-'}}</view>
-      <view class='infoItem'>性别: {{item.sex?item.sex:'-'}}</view>
-      <button class='editButton' id='{{index}}' bindtap='editItem'>编辑</button>
-    </view>
-    <view class='aline'></view>
+  <view wx:if='{{numberList.length==0}}' class='noRecordContainer'>
+    <view class='noRecordText'>您还没有收藏记录</view>
+    <button class='noRecordButton' bindtap='bindAdd'>添加我的记录</button>
   </view>
-
+  <view wx:else class='listContainer'>
+    <view wx:for="{{numberList}}" wx:key="{{index}}">
+      <view class='oneLine'>生日: {{item.birthday}}</view>
+      <view class='oneLine'>
+        <view class='infoItem'>姓名: {{item.name?item.name:'-'}}</view>
+        <view class='infoItem'>性别: {{item.sexIndex?sexes[item.sexIndex]:'-'}}</view>
+        <button class='editButton' id='{{index}}' bindtap='editItem'>编辑</button>
+      </view>
+      <view class='aline'></view>
+    </view>
+  </view>
 </view>
 

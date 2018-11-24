@@ -1,0 +1,22 @@
+<view class='container'>
+  <view class='infoContainer'>
+    <view class='oneLine'>
+      <view class='title'>姓名:</view>
+      <input class='content' value="{{name?name:''}}" placeholder='添加姓名' bindinput='bindNameChange'/>
+    </view>
+    <view class='oneLine'>
+      <view class='title'>性别:</view>
+      <picker class='content' range='{{sexes}}' bindchange='bindSexChange'>
+        <view>{{sexIndex?sexes[sexIndex]:'未设置'}}</view>
+      </picker>
+    </view>
+
+    <button wx:if='{{showSaveButton}}' class='saveButton' bindtap='bindSave'>保存</button>
+    <view class='aline'/>
+  </view>
+
+  <view class='resultContainer'>
+    <import src='../../templates/numberCalculate/numberCalculate'/>
+    <template is='numberCalculate' data='{{lifeNumberParams: lifeNumberParams, lifeNumberResults: lifeNumberResults, lifeNumberCounts: lifeNumberCounts, multipuleNumberString: multipuleNumberString, lackedNumberString: lackedNumberString}}'/>
+  </view>
+</view>

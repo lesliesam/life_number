@@ -1,0 +1,56 @@
+<template name='numberCalculate'>
+  <view class='resultDiagram'>
+      <view class='diagramColumn'>
+        <view class='diagramUnitRect'>{{lifeNumberParams.aa}}</view>
+        <view class='diagramUnitRect'>{{lifeNumberParams.bb}}</view>
+        <view class='diagramUnitRect'>{{lifeNumberParams.cc}}</view>
+        <view class='diagramUnitRect`'>{{lifeNumberParams.dd}}</view>
+      </view>
+      <view class='diagramColumn'>
+        <view class='diagramUnitRound'>{{lifeNumberParams.ee}}</view>
+        <view class='diagramUnitRound'>{{lifeNumberParams.ff}}</view>
+        <view class='diagramUnitRound'>{{lifeNumberParams.gg}}</view>
+        <view class='diagramUnitRound'>{{lifeNumberParams.hh}}</view>
+      </view>
+      <view class='diagramColumn'>
+        <view class='diagramUnitRound'>{{lifeNumberParams.ii}}</view>
+        <view class='diagramUnitRound'>{{lifeNumberParams.jj}}</view>
+      </view>
+      <view class='diagramColumn'>
+        <view class='diagramUnitRound'>{{lifeNumberParams.kk}}</view>
+      </view>
+    </view>
+
+    <view class='actionButtons'>
+      <button class='share' open-type='share'>分享</button>
+      <button wx:if='{{showSaveButton}}'class='store' bindtap='storeResult'>收藏</button>
+    </view>
+    
+
+    <view class='resultRow'> 
+      <view class='resultTitle'>主性格</view>
+      <view class='resultContent'>{{lifeNumberResults.zxg}}</view>
+    </view>
+    <view class='resultRow'> 
+      <view class='resultTitle'>多的数字</view>
+      <view class='resultContent'>{{multipuleNumberString}}</view>
+    </view>
+    <view class='resultRow'> 
+      <view class='resultTitle'>缺的数字</view>
+      <view class='resultContent'>{{lackedNumberString}}</view>
+    </view>
+    <view class='resultRow'> 
+      <view class='resultTitle'>内心号码</view>
+      <view class='resultContent'>{{lifeNumberResults.nxhm}}</view>
+    </view>
+    <view class='resultRow'> 
+      <view class='resultTitle'>潜意识性格</view>
+      <view class='resultContent'>{{lifeNumberResults.qysxg}}</view>
+    </view>
+    <view wx:for="{{[1,2,3,4,5,6,7,8,9,10,11,12]}}" class='codeContainer' wx:key="numberKeys">
+      <view class='resultRow'> 
+        <view class='resultTitle'>第{{item}}组</view>
+        <view class='resultContent'>{{lifeNumberResults['mm' + item]}}</view>
+      </view>
+    </view>
+</template>

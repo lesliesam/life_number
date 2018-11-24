@@ -1,3 +1,6 @@
+
+@import "../../templates/numberCalculate/numberCalculate.wxss";
+
 .container {
   display: flex;
   flex-direction: column;
@@ -5,14 +8,15 @@
   padding-top: 10px;
 }
 
-.listContainer {
+.infoContainer {
   align-self: stretch;
+  margin-bottom: 7px;
 }
 
 .oneLine {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 5px;
@@ -26,34 +30,20 @@
   margin-right: 15px;
 }
 
-.infoItem {
-  font-size: 14px;
-  color: darkgray;
+.title {
+  flex: 30%;
 }
 
-.editButton {
-  background-color: rgb(1, 189, 1);
-  color: white;
-  margin-left: 0px;
-  margin-right: 0px;
+.content {
+  flex: 60%;
 }
 
-.noRecordContainer {
-  display: flex;
-  flex-direction: column;
-  padding-top: 120px;
-  align-self: stretch;
-}
-
-.noRecordText {
-  align-self: center;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.noRecordButton {
-  background-color: rgb(1, 189, 1);
-  color: white;
+.saveButton {
   margin-left: 20px;
   margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  align-self: stretch;
+  background-color: rgb(1, 189, 1);
+  color: white;
 }

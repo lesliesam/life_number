@@ -1,0 +1,73 @@
+.resultContainer {
+  align-self: stretch;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.resultDiagram {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.diagramColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.diagramUnitRect {
+  height: 32px;
+  width: 32px;
+  margin: 2px;
+  border: thin solid rgb(184, 183, 183);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diagramUnitRound {
+  height: 32px;
+  width: 32px;
+  margin: 2px;
+  border: thin solid rgb(248, 70, 70);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resultRow {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  border: thin solid grey;
+  margin-top: 1px
+}
+
+.resultTitle {
+  flex: 1
+}
+
+.resultContent {
+  flex: 1
+}
+
+.codeContainer {
+  align-self: stretch
+}
+
+.actionButtons {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+.share {
+  align-self: flex-start
+}

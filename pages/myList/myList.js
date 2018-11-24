@@ -1,10 +1,11 @@
-//index.js
+//myList.js
 //获取应用实例
 const app = getApp()
 
 Page({
   data: {
-    numberList: []
+    numberList: [],
+    sexes: ['男', '女'],
   },
   //事件处理函数
   bindViewTap: function () {
@@ -26,6 +27,14 @@ Page({
   },
   editItem: function (e) {
     var id = e.currentTarget.id;
-    console.log(id)
+    wx.navigateTo({
+      url: '../item/item?itemInfo=' + JSON.stringify(this.data.numberList[id])
+    })
+  },
+
+  bindAdd: function(e) {
+    wx.switchTab({
+      url: '../index/index'
+    })
   }
 })
