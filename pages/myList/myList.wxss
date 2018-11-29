@@ -48,6 +48,20 @@
   color: white;
   margin-left: 0px;
   margin-right: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.removeButton {
+  background-color: rgb(255, 51, 0);
+  color: white;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 8px;
+  padding-right: 8px;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
 }
 
 .noRecordContainer {

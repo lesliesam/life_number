@@ -8,6 +8,7 @@
       <view class='oneLine'>
         <view>生日: {{item.birthday}}</view>
         <view class='timeItem'>{{item.relativeTime}}创建</view>
+        <button class='removeButton' id='{{index}}' bindtap='removeItem'>x</button>
       </view>
       <view class='oneLine'>
         <view class='flexContainer'>

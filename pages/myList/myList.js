@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    authorized: false,
     numberList: [],
     sexes: ['男', '女'],
   },
@@ -12,6 +13,19 @@ Page({
     wx.navigateTo({
       url: '../logs/logs'
     })
+  },
+  onLoad: function() {
+    if (app.globalData.userInfo == null) {
+      this.setData({
+        authorized: false
+      })
+      console.log("false")
+    } else {
+      this.setData({
+        authorized: true
+      })
+      console.log("true")
+    }
   },
   onShow: function () {
     var self = this
@@ -56,6 +70,30 @@ Page({
     var id = e.currentTarget.id;
     wx.navigateTo({
       url: '../item/item?itemInfo=' + JSON.stringify(this.data.numberList[id])
+    })
+  },
+
+  removeItem: function(e) {
+    var id = e.currentTarget.id;
+    wx.showLoading({
+      title: '删除中',
+    })
+
+    const db = wx.cloud.database()
+    var self = this;
+    db.collection('number').doc(this.data.numberList[id]._id).remove({
+      success: function(res) {
+        var newList = self.data.numberList
+        newList.splice(id, 1);
+        self.setData({
+          numberList: newList
+        })
+      },
+
+      complete: function(res) {
+        wx.hideLoading();
+      }
+      
     })
   },
 
