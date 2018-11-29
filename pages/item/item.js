@@ -94,5 +94,5 @@ Page({
     })
   },
 
-  onShareAppMessage: numberCalculate.onShareAppMessage,
+  ...numberCalculate,
 })
