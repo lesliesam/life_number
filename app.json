@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/myList/myList",
     "pages/item/item",
+    "pages/numberExplain/primaryNumber",
     "pages/logs/logs"
   ],
   "window":{

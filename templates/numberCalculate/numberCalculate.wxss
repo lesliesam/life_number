@@ -42,12 +42,28 @@
   justify-content: center;
 }
 
+.resultBlock {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border: thin solid grey;
+  border-radius: 5px;
+  margin-top: 1px;
+  padding: 5px;
+}
+
 .resultRow {
   align-self: stretch;
   display: flex;
   flex-direction: row;
-  border: thin solid grey;
-  margin-top: 1px
+}
+
+.resultButton {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .resultTitle {

@@ -1,0 +1,21 @@
+<view class='container'>
+  <view class='title'>主性格为{{numberToExplain}}的性格特征</view>
+  <view class='aline'/>
+
+  <view class='explainContainer'>
+    <view wx:for='{{tags}}' class='explainBlock' >
+      <button wx:if='{{item.isPositive}}' class='positiveBlock'>
+        {{item.explain}}
+      </button>
+      <button wx:else class='nagetiveBlock'>
+        {{item.explain}}
+      </button>
+    </view>
+  </view>
+  
+<button class='add'>
+  我来写点
+</button>
+
+</view>
+

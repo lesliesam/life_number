@@ -158,6 +158,12 @@ const actions = {
       }
     })
   },
+
+  primaryNumberTap: function(e) {
+    wx.navigateTo({
+      url: '../numberExplain/primaryNumber?numberToExplain=' + this.data.lifeNumberResults.zxg
+    })
+  },
 }
 
 export default actions;

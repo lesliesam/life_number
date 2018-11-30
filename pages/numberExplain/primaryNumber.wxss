@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.explainContainer {
+  margin-top: 10px;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.explainBlock {
+  margin: 2px;
+}
+
+.positiveBlock {
+  background-color: rgb(0, 158, 79);
+  color: white;
+}
+
+.nagetiveBlock {
+  background-color: rgb(255, 0, 64);
+  color: white;
+}
+
+
+.add {
+  position: fixed;
+  bottom: 30rpx;
+  left: 15px;
+  right: 15px;
+}

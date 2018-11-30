@@ -8,3 +8,15 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.title {
+  font-size: 20px;
+}
+
+.aline {
+  align-self: stretch;
+  background-color: grey;
+  height: 1px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
