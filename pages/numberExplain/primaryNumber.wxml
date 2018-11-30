@@ -13,9 +13,10 @@
     </view>
   </view>
   
-<button class='add'>
-  我来写点
-</button>
-
+  <view class='stickAtBottom'>
+    <button class='addButton' bindtap='bindAdd'>
+      我来写点
+    </button>
+  </view>
 </view>
 

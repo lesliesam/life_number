@@ -29,10 +29,19 @@
   color: white;
 }
 
-
-.add {
+.stickAtBottom {
   position: fixed;
-  bottom: 30rpx;
-  left: 15px;
-  right: 15px;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  background-color: lightgray;
+}
+
+.addButton {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(1, 189, 1);
+  color: white;
 }

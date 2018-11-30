@@ -1,0 +1,13 @@
+<view class='container'>
+  <textarea placeholder="请输入您的分析"/>
+  <view>
+    <view>
+      类型
+    </view>
+    <button>正面意义</button>
+    <button>负面意义</button>
+    <button>添加</button>
+    <button>上传</button>
+  </view>
+
+</view>

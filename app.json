@@ -4,6 +4,7 @@
     "pages/myList/myList",
     "pages/item/item",
     "pages/numberExplain/primaryNumber",
+    "pages/numberExplain/input",
     "pages/logs/logs"
   ],
   "window":{
@@ -19,7 +20,7 @@
         "text": "计算器"
       },
       {
-        "pagePath": "pages/myList/myList",
+        "pagePath": "pages/numberExplain/input",
         "text": "我的收藏"
       }
     ]
