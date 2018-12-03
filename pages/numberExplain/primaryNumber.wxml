@@ -3,11 +3,11 @@
   <view class='aline'/>
 
   <view class='explainContainer'>
-    <view wx:for='{{tags}}' class='explainBlock' >
+    <view wx:for='{{tags}}' class='explainBlock' wx:key='id'>
       <button wx:if='{{item.isPositive}}' class='positiveBlock'>
         {{item.explain}}
       </button>
-      <button wx:else class='nagetiveBlock'>
+      <button wx:else class='negativeBlock'>
         {{item.explain}}
       </button>
     </view>

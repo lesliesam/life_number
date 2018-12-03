@@ -1,13 +1,19 @@
 <view class='container'>
-  <textarea placeholder="请输入您的分析"/>
-  <view>
-    <view>
-      类型
-    </view>
-    <button>正面意义</button>
-    <button>负面意义</button>
-    <button>添加</button>
-    <button>上传</button>
+  <view class='title'>请输入您对此的分析</view>
+  <view class='aline'/>
+
+   <view class='oneLine'>
+    <view>类型:</view>
+    <picker class='content' range='{{typeValues}}' bindchange='bindTypeChange'>
+      <view wx:if='{{currentTypeSelected == 0}}' class='positiveType'>
+        {{typeValues[currentTypeSelected]}}
+      </view>
+      <view wx:if='{{currentTypeSelected == 1}}' class='negativeType'>
+        {{typeValues[currentTypeSelected]}}
+      </view>
+    </picker>
   </view>
 
+  <textarea class='input' placeholder="请输入您的分析" bindinput='bindTextInput'/>
+  <button class='addButton' bindtap='bindAdd'>添加</button>
 </view>

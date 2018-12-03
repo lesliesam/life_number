@@ -20,7 +20,7 @@
         "text": "计算器"
       },
       {
-        "pagePath": "pages/numberExplain/input",
+        "pagePath": "pages/myList/myList",
         "text": "我的收藏"
       }
     ]
