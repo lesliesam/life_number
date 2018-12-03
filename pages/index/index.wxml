@@ -10,7 +10,11 @@
         </picker>
     </view>
     
-    <button class='calculate' bindtap='showResult'>开始计算
+    <button wx:if="{{!hasUserInfo && canIUse}}" class='calculate' open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 
+      请先登陆
+    </button>
+    <button wx:else class='calculate' bindtap='showResult'>
+      开始计算
     </button>
   </view>
 

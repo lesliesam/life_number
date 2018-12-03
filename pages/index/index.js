@@ -62,11 +62,15 @@ Page({
   },
   getUserInfo: function(e) {
     console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+    if (e.detail.userInfo) {
+      app.globalData.userInfo = e.detail.userInfo
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true
+      })
+
+      this.showResult();
+    }
   },
   bindDateChange: function (e) {
     console.log('生日修改为', e.detail.value)
@@ -77,7 +81,8 @@ Page({
       this.showResult();
     }
   },
-  showResult: function (e) {
+
+  showResult: function () {
     var {params, results, numberCounts, multipuleNumberString, lackedNumberString} = numberCalculate.calculateResult(this.data.birthday);
 
     this.setData({
