@@ -161,14 +161,14 @@ const actions = {
 
   primaryNumberTap: function(e) {
     wx.navigateTo({
-      url: '../numberExplain/primaryNumber?title=主性格&numberToExplain=' + this.data.lifeNumberResults.zxg
+      url: '../numberExplain/numberExplain?title=主性格&numberToExplain=' + this.data.lifeNumberResults.zxg
     })
   },
 
   numCombinationTap: function(e) {
     var id = e.currentTarget.id
     wx.navigateTo({
-      url: '../numberExplain/primaryNumber?title=组合数&numberToExplain=' + this.data.lifeNumberResults['mm' + id],
+      url: '../numberExplain/numberExplain?title=组合数&numberToExplain=' + this.data.lifeNumberResults['mm' + id],
     })
   },
 }

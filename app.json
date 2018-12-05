@@ -3,7 +3,7 @@
     "pages/index/index",
     "pages/myList/myList",
     "pages/item/item",
-    "pages/numberExplain/primaryNumber",
+    "pages/numberExplain/numberExplain",
     "pages/numberExplain/input",
     "pages/logs/logs"
   ],
