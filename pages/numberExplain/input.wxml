@@ -3,7 +3,7 @@
   <view class='aline'/>
 
    <view class='oneLine'>
-    <view>类型:</view>
+    <view>点击可修改类型:</view>
     <picker class='content' range='{{typeValues}}' bindchange='bindTypeChange'>
       <view wx:if='{{currentTypeSelected == 0}}' class='positiveType'>
         {{typeValues[currentTypeSelected]}}

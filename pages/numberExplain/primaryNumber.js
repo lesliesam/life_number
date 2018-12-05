@@ -4,8 +4,10 @@ const app = getApp()
 
 Page({
   data: {
+    title: '',
     numberToExplain: '',
-    tags: [],
+    publicTags: [],
+    privateTags: [],
   },
   //事件处理函数
   bindViewTap: function () {
@@ -14,11 +16,9 @@ Page({
     })
   },
   onLoad: function (options) {
-    var numberToExplain = JSON.parse(options.numberToExplain)
-    console.log(numberToExplain)
-
     this.setData({
-      numberToExplain: numberToExplain
+      title: options.title,
+      numberToExplain: options.numberToExplain
     })
   },
    
@@ -26,24 +26,8 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-    
-    var self = this;
-    const db = wx.cloud.database()
-    db.collection('primaryNumberExplain').where({
-      number: this.data.numberToExplain
-    })
-      .get({
-        success: function (res) {
-          console.log(res)
-          self.setData({
-            tags: res.data
-          })
-        },
-        complete: function (res) {
-          wx.hideLoading();
-        }
-
-      })
+    this.loadPublicTags()
+    this.loadPrivateTags()
   },
 
   bindAdd: function (e) {
@@ -51,4 +35,42 @@ Page({
       url: '../numberExplain/input?numberToExplain=' + this.data.numberToExplain,
     })
   },
+
+  loadPublicTags() {
+    var self = this;
+    const db = wx.cloud.database()
+    db.collection('PNE_public').where({
+      number: this.data.numberToExplain.toString(),
+    })
+      .get({
+        success: function (res) {
+          console.log(res)
+          self.setData({
+            publicTags: res.data
+          })
+        },
+        complete: function (res) {
+          wx.hideLoading();
+        }
+      })
+  },
+
+  loadPrivateTags() {
+    var self = this;
+    const db = wx.cloud.database()
+    db.collection('PNE_private').where({
+      number: this.data.numberToExplain.toString(),
+    })
+      .get({
+        success: function (res) {
+          console.log(res)
+          self.setData({
+            privateTags: res.data
+          })
+        },
+        complete: function (res) {
+          wx.hideLoading();
+        }
+      })
+  }
 })

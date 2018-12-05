@@ -16,7 +16,7 @@ Page({
     })
   },
   onLoad: function (options) {
-    var numberToExplain = JSON.parse(options.numberToExplain)
+    var numberToExplain = options.numberToExplain
     console.log(numberToExplain)
 
     this.setData({
@@ -43,17 +43,23 @@ Page({
       title: '保存中',
     })
     const db = wx.cloud.database()
-    db.collection('primaryNumberExplain').add({
+    db.collection('PNE_private').add({
       data: {
-        number: this.data.numberToExplain,
+        number: this.data.numberToExplain.toString(),
         explain: this.data.text,
         isPositive: this.data.currentTypeSelected==0?true:false,
+        auther: app.globalData.userInfo.nickName
       },
       complete: function (e) {
         wx.hideLoading();
+      },
+      success: function(e) {
         wx.navigateBack({
           delta: 1,
         })
+      },
+      fail: function(err) {
+        console.log(err)
       }
     })
   },

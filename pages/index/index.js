@@ -60,8 +60,8 @@ Page({
       this.showResult()
     }
   },
+
   getUserInfo: function(e) {
-    console.log(e)
     if (e.detail.userInfo) {
       app.globalData.userInfo = e.detail.userInfo
       this.setData({
@@ -72,6 +72,7 @@ Page({
       this.showResult();
     }
   },
+
   bindDateChange: function (e) {
     console.log('生日修改为', e.detail.value)
     this.setData({

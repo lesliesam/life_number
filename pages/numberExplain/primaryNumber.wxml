@@ -1,9 +1,17 @@
 <view class='container'>
-  <view class='title'>主性格为{{numberToExplain}}的性格特征</view>
+  <view class='title'>{{title}}为{{numberToExplain}}的性格特征</view>
   <view class='aline'/>
 
   <view class='explainContainer'>
-    <view wx:for='{{tags}}' class='explainBlock' wx:key='id'>
+    <view wx:for='{{publicTags}}' class='explainBlock' wx:key='publicId'>
+      <button wx:if='{{item.isPositive}}' class='positiveBlock'>
+        {{item.explain}}
+      </button>
+      <button wx:else class='negativeBlock'>
+        {{item.explain}}
+      </button>
+    </view>
+    <view wx:for='{{privateTags}}' class='explainBlock' wx:key='privateId'>
       <button wx:if='{{item.isPositive}}' class='positiveBlock'>
         {{item.explain}}
       </button>
