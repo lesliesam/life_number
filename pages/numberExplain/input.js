@@ -43,12 +43,12 @@ Page({
       title: '保存中',
     })
     const db = wx.cloud.database()
-    db.collection('PNE_private').add({
+    db.collection('explain_private').add({
       data: {
         number: this.data.numberToExplain.toString(),
         explain: this.data.text,
         isPositive: this.data.currentTypeSelected==0?true:false,
-        auther: app.globalData.userInfo.nickName
+        author: app.globalData.userInfo.nickName
       },
       complete: function (e) {
         wx.hideLoading();

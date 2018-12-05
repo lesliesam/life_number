@@ -39,7 +39,7 @@ Page({
   loadPublicTags() {
     var self = this;
     const db = wx.cloud.database()
-    db.collection('PNE_public').where({
+    db.collection('explain_public').where({
       number: this.data.numberToExplain.toString(),
     })
       .get({
@@ -58,7 +58,7 @@ Page({
   loadPrivateTags() {
     var self = this;
     const db = wx.cloud.database()
-    db.collection('PNE_private').where({
+    db.collection('explain_private').where({
       number: this.data.numberToExplain.toString(),
     })
       .get({
