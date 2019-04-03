@@ -20,6 +20,23 @@ const actions = {
     params.ff = this.numberAdd(params.bb);
     params.gg = this.numberAdd(params.cc);
     params.hh = this.numberAdd(params.dd);
+    
+    //2000年出生的人 00算出来强制变成5
+    if (params.hh == 0) {
+      params.hh = 5;
+    }
+    if (params.aa < 10) {
+      params.aa = "0" + params.aa
+    }
+    if (params.bb < 10) {
+      params.bb = "0" + params.bb
+    }
+    if (params.cc < 10) {
+      params.cc = "0" + params.cc
+    }
+    if (params.dd < 10) {
+      params.dd = "0" + params.dd
+    }
     params.ii = this.numberAdd(params.ee + params.ff);
     params.jj = this.numberAdd(params.gg + params.hh);
     params.kk = this.numberAdd(params.ii + params.jj);

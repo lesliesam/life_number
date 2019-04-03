@@ -3,7 +3,7 @@
   <view class='select_bar'>
     <view class="birthday_select">
         <view class="birthday__title">请选择正确的阳历日期：</view>
-        <picker mode="date" value="{{birthday}}" start="1900-01-01" end="2017-09-01" bindchange="bindDateChange">
+        <picker mode="date" value="{{birthday}}" start="1900-01-01" end="2025-12-01" bindchange="bindDateChange">
           <view class="picker">
             当前选择：{{birthday}}
           </view>
