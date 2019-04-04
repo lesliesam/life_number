@@ -2,6 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/myList/myList",
+    "pages/contact/contact",
     "pages/item/item",
     "pages/numberExplain/numberExplain",
     "pages/numberExplain/input",
@@ -22,6 +23,10 @@
       {
         "pagePath": "pages/myList/myList",
         "text": "我的收藏"
+      },
+      {
+        "pagePath": "pages/contact/contact",
+        "text": "联系我们"
       }
     ]
   }
