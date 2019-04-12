@@ -2,7 +2,8 @@
 //获取应用实例
 const app = getApp()
 
-import numberCalculate from '../../templates/numberCalculate/numberCalculate.js'
+import numberCalculate1 from '../../templates/numberCalculate1/numberCalculate.js'
+import numberCalculate2 from '../../templates/numberCalculate2/numberCalculate.js'
 
 Page({
   data: {
@@ -11,11 +12,10 @@ Page({
     birthday: '1980-01-01',
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     showResult: false,
-    lifeNumberParams: {},
-    lifeNumberResults: {},
-    lifeNumberCounts: new Array(),
-    multipuleNumberString: '',
-    lackedNumberString: '',
+    nc1_params: {},
+    nc2_params: {},
+    southTabStyle: 'tabItemSelected',
+    northTabStyle: 'tabItemUnSelected',
   },
   //事件处理函数
   bindViewTap: function() {
@@ -84,20 +84,31 @@ Page({
   },
 
   showResult: function () {
-    var {params, results, numberCounts, multipuleNumberString, lackedNumberString} = numberCalculate.calculateResult(this.data.birthday);
+    var numberCalculate1_params = numberCalculate1.calculateResult(this.data.birthday);
+    var numberCalculate2_params = numberCalculate2.calculateResult(this.data.birthday);
 
     this.setData({
-      lifeNumberParams: params,
-      lifeNumberResults: results,
-      lifeNumberCounts: numberCounts,
-      multipuleNumberString: multipuleNumberString,
-      lackedNumberString: lackedNumberString,
+      nc1_params: numberCalculate1_params,
+      nc2_params: numberCalculate2_params,
+      showResult: true
     })
 
+    console.log(this.data.nc2_params)
+  },
+
+  showSouth: function() {
     this.setData({
-      showResult: true
+      southTabStyle: 'tabItemSelected',
+      northTabStyle: 'tabItemUnSelected',
     })
   },
 
-  ...numberCalculate,
+  showNorth: function() {
+    this.setData({
+      southTabStyle: 'tabItemUnSelected',
+      northTabStyle: 'tabItemSelected',
+    })
+  },
+
+  ...numberCalculate1,
 })

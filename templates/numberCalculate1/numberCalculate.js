@@ -91,8 +91,10 @@ const actions = {
         lackedNumberString += (i + ',')
       }
     }
+    var lifeNumberParams = params;
+    var lifeNumberResults = results;
 
-    return {params, results, numberCounts, multipuleNumberString, lackedNumberString};
+    return { lifeNumberParams, lifeNumberResults, numberCounts, multipuleNumberString, lackedNumberString};
   },
   numberAdd: function (oldNum) {
     var tempNum = parseInt(oldNum / 10) + oldNum % 10
@@ -178,14 +180,14 @@ const actions = {
 
   primaryNumberTap: function(e) {
     wx.navigateTo({
-      url: '../numberExplain/numberExplain?title=主性格&numberToExplain=' + this.data.lifeNumberResults.zxg
+      url: '../numberExplain/numberExplain?title=主性格&numberToExplain=' + this.data.nc1_params.lifeNumberResults.zxg
     })
   },
 
   numCombinationTap: function(e) {
     var id = e.currentTarget.id
     wx.navigateTo({
-      url: '../numberExplain/numberExplain?title=组合数&numberToExplain=' + this.data.lifeNumberResults['mm' + id],
+      url: '../numberExplain/numberExplain?title=组合数&numberToExplain=' + this.data.nc1_params.lifeNumberResults['mm' + id],
     })
   },
 }

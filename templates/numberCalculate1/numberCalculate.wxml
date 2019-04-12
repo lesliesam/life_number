@@ -1,4 +1,4 @@
-<template name='numberCalculate'>
+<template name='numberCalculate1'>
   <view class='resultDiagram'>
       <view class='diagramColumn'>
         <view class='diagramUnitRect'>{{lifeNumberParams.aa}}</view>

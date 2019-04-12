@@ -1,0 +1,31 @@
+<template name='numberCalculate2'>
+  <view class='nc2_resultDiagram'>
+    <view class='nc2_resultBlock'>
+      <view class='nc2_resultItem nc2_resultItemLeft'>
+        <view>+ {{solarParams.year}} / {{solarParams.month}} / {{solarParams.day}}</view>
+        <view>{{solarParams.yearSum}} / {{solarParams.yearMonthSum}} / {{solarParams.birthdaySum}}</view>
+      </view>
+      <view class='nc2_resultItem nc2_resultItemRight'>
+        <view>{{solarParams.keyNum1}}</view>
+        <view class='nc2_shortLine'/>
+        <view>{{solarParams.keyNum2}}</view>
+        <view wx:if="{{solarParams.keyNum3 > 0}}" class='nc2_shortLine'/>
+        <view wx:if="{{solarParams.keyNum3 > 0}}">{{solarParams.keyNum3}}</view>
+      </view>
+    </view>
+    
+    <view class='nc2_resultBlock nc2_marginTop30'>
+      <view class='nc2_resultItem nc2_resultItemLeft'>
+        <view>- {{lunarParams.year}} / {{lunarParams.month}} / {{lunarParams.day}}</view>
+        <view>{{lunarParams.yearSum}} / {{lunarParams.yearMonthSum}} / {{lunarParams.birthdaySum}}</view>
+      </view>
+      <view class='nc2_resultItem nc2_resultItemRight'>
+        <view>{{lunarParams.keyNum1}}</view>
+        <view class='nc2_shortLine'/>
+        <view>{{lunarParams.keyNum2}}</view>
+        <view wx:if="{{lunarParams.keyNum3 > 0}}" class='nc2_shortLine'/>
+        <view wx:if="{{lunarParams.keyNum3 > 0}}">{{lunarParams.keyNum3}}</view>
+      </view>
+    </view>
+  </view>
+</template>

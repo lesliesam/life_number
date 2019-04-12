@@ -1,5 +1,6 @@
 /**index.wxss**/
-@import "../../templates/numberCalculate/numberCalculate.wxss";
+@import "../../templates/numberCalculate1/numberCalculate.wxss";
+@import "../../templates/numberCalculate2/numberCalculate.wxss";
 
 .container {
   display: flex;
@@ -24,4 +25,48 @@
 .calculate {
   background-color: rgb(1, 189, 1);
   color: white;
+}
+
+.tabbar {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.tabItemSelected {
+  flex: 1;
+  background-color: white;
+  color: black;
+  z-index: 2;
+}
+
+.tabItemSelected::after {
+  border-color: black;
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.tabItemUnSelected {
+  flex: 1;
+  background-color: lightgrey;
+  color: black;
+}
+
+.tabItemUnSelected::after {
+  border-bottom-color: black;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.aline {
+  margin-top: -2px;
+  margin-left: -40px;
+  margin-right: -40px;
+  height: 2px;
+  align-self: stretch;
+  background-color: grey;
+  z-index: 1;
+  margin-bottom: 20px;
 }

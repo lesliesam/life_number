@@ -1,0 +1,40 @@
+.nc2_resultDiagram {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nc2_resultBlock {
+  display: flex;
+  flex-direction: row;
+  align-self: stretch;
+  align-content: center;
+}
+
+.nc2_resultItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: end;
+}
+
+.nc2_resultItemLeft {
+  flex: 1.5;
+}
+
+.nc2_resultItemRight {
+  flex: 1;
+}
+
+.nc2_shortLine {
+  background-color: black;
+  height: 1px;
+  width: 40px;
+  margin-right: 0px;
+}
+
+.nc2_marginTop30 {
+  margin-top: 30px;
+}

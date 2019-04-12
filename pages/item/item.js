@@ -2,16 +2,16 @@
 //获取应用实例
 const app = getApp()
 
-import numberCalculate from '../../templates/numberCalculate/numberCalculate.js'
+import numberCalculate1 from '../../templates/numberCalculate1/numberCalculate.js'
+import numberCalculate2 from '../../templates/numberCalculate2/numberCalculate.js'
 
 
 Page({
   data: {
-    lifeNumberParams: {},
-    lifeNumberResults: {},
-    lifeNumberCounts: new Array(),
-    multipuleNumberString: '',
-    lackedNumberString: '',
+    nc1_params: {},
+    nc2_params: {},
+    southTabStyle: 'tabItemSelected',
+    northTabStyle: 'tabItemUnSelected',
     itemInfo: {},
     birthday: '',  //在分享方法中要使用到这个变量
     name: '',
@@ -41,14 +41,12 @@ Page({
       sexIndex: sexIndex,
     })
 
-    var { params, results, numberCounts, multipuleNumberString, lackedNumberString } = numberCalculate.calculateResult(itemInfo.birthday);
+    var numberCalculate1_params = numberCalculate1.calculateResult(itemInfo.birthday);
+    var numberCalculate2_params = numberCalculate2.calculateResult(this.data.birthday);
 
     this.setData({
-      lifeNumberParams: params,
-      lifeNumberResults: results,
-      lifeNumberCounts: numberCounts,
-      multipuleNumberString: multipuleNumberString,
-      lackedNumberString: lackedNumberString,
+      nc1_params: numberCalculate1_params,
+      nc2_params: numberCalculate2_params,
     })
   },
 
@@ -94,5 +92,19 @@ Page({
     })
   },
 
-  ...numberCalculate,
+  showSouth: function () {
+    this.setData({
+      southTabStyle: 'tabItemSelected',
+      northTabStyle: 'tabItemUnSelected',
+    })
+  },
+
+  showNorth: function () {
+    this.setData({
+      southTabStyle: 'tabItemUnSelected',
+      northTabStyle: 'tabItemSelected',
+    })
+  },
+
+  ...numberCalculate1,
 })

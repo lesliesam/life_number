@@ -16,7 +16,18 @@
   </view>
 
   <view class='resultContainer'>
-    <import src='../../templates/numberCalculate/numberCalculate'/>
-    <template is='numberCalculate' data='{{lifeNumberParams: lifeNumberParams, lifeNumberResults: lifeNumberResults, lifeNumberCounts: lifeNumberCounts, multipuleNumberString: multipuleNumberString, lackedNumberString: lackedNumberString}}'/>
+    <view class='tabbar'>
+      <button class='{{southTabStyle}}' bindtap='showSouth'>算法1</button>
+      <button class='{{northTabStyle}}' bindtap='showNorth'>算法2</button>
+    </view>
+    <view class='longLine'></view>
+    <view wx:if="{{southTabStyle == 'tabItemSelected'}}" class='codeContainer'>
+      <import src='../../templates/numberCalculate1/numberCalculate'/>
+      <template is='numberCalculate1' data='{{...nc1_params}}'/>
+    </view>
+    <view wx:else class='codeContainer'>
+      <import src='../../templates/numberCalculate2/numberCalculate'/>
+      <template is='numberCalculate2' data='{{...nc2_params}}'/>
+    </view>
   </view>
 </view>

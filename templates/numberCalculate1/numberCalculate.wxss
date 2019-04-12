@@ -4,6 +4,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  border-width: 1px;
+  border-color: black;
+}
+
+
+.codeContainer {
+  align-self: stretch
 }
 
 .resultDiagram {

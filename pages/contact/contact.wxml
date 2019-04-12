@@ -2,5 +2,5 @@
   <button open-type="contact" class='btn_item'>客服会话</button>
   <button open-type="feedback" class='btn_item'>意见反馈</button>
 
-  <text class='version_item'>版本号：1.0.4</text>
+  <text class='version_item'>版本号：1.0.5</text>
 </view>
