@@ -93,6 +93,8 @@ Page({
       showResult: true
     })
 
+    this.drawCanvas(this.data.nc2_params.solarParams, this.data.nc2_params.lunarParams)
+
     console.log(this.data.nc2_params)
   },
 
@@ -108,7 +110,10 @@ Page({
       southTabStyle: 'tabItemUnSelected',
       northTabStyle: 'tabItemSelected',
     })
+
+    setTimeout(this.drawCanvas, 100, this.data.nc2_params.solarParams, this.data.nc2_params.lunarParams)
   },
 
   ...numberCalculate1,
+  ...numberCalculate2,
 })

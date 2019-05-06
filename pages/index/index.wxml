@@ -19,9 +19,18 @@
   </view>
 
   <view wx:if="{{showResult}}" wx:key="results" class='resultContainer'>
+
     <view class='tabbar'>
       <button class='{{southTabStyle}}' bindtap='showSouth'>算法1</button>
       <button class='{{northTabStyle}}' bindtap='showNorth'>算法2</button>
+      <button class='share' open-type='share'>
+        <image class='shareImage' src='../../images/share.png'></image>
+        <text class='shareText'>分享</text>
+      </button>
+      <button class='save' bindtap='storeResult'>
+        <image class='saveImage' src='../../images/save.png'></image>
+        <text class='saveText'>保存</text>
+      </button>
     </view>
     <view class='aline'></view>
     <view wx:if="{{southTabStyle == 'tabItemSelected'}}" class='codeContainer'>

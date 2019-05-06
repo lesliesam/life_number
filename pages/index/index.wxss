@@ -31,7 +31,6 @@
   align-self: stretch;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
 }
 
 .tabItemSelected {

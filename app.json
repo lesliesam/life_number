@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/myList/myList",
     "pages/contact/contact",
@@ -8,11 +8,11 @@
     "pages/numberExplain/input",
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "生命数字密码计算器",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "list": [
@@ -29,5 +29,6 @@
         "text": "联系我们"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

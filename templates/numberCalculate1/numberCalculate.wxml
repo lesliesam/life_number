@@ -21,12 +21,6 @@
       </view>
     </view>
 
-    <view class='actionButtons'>
-      <button class='share' open-type='share'>分享</button>
-      <button wx:if='{{showSaveButton}}'class='store' bindtap='storeResult'>收藏</button>
-    </view>
-    
-
     <view class='resultBlock'>
       <button class='resultButton' bindtap='primaryNumberTap'>
         <view class='resultTitle'>主性格</view>

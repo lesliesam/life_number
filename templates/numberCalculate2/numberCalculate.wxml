@@ -13,6 +13,8 @@
         <view wx:if="{{solarParams.keyNum3 > 0}}">{{solarParams.keyNum3}}</view>
       </view>
     </view>
+
+    <canvas style="width: 300px; height: 300px; background-color: #dddddd" canvas-id='solarCanvas'></canvas>
     
     <view class='nc2_resultBlock nc2_marginTop30'>
       <view class='nc2_resultItem nc2_resultItemLeft'>
@@ -27,5 +29,7 @@
         <view wx:if="{{lunarParams.keyNum3 > 0}}">{{lunarParams.keyNum3}}</view>
       </view>
     </view>
+
+    <canvas style="width: 300px; height: 300px; background-color: #dddddd" canvas-id='lunarCanvas'></canvas>
   </view>
 </template>

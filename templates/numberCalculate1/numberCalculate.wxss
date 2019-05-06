@@ -89,8 +89,25 @@
   align-self: stretch;
   display: flex;
   align-items: center;
+  margin-bottom: 20px;
 }
 
-.share {
-  align-self: flex-start
+.share, .save {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.share::after, .save::after {
+  border: 0;
+  background-color: transparent;
+}
+
+.shareImage, .saveImage {
+  width: 30px;
+  height: 30px;
+}
+
+.shareText, .saveText {
+  font-size: small;
 }
