@@ -7,6 +7,7 @@ Page({
     authorized: false,
     numberList: [],
     sexes: ['男', '女'],
+    hasMoreToLoad: true,
   },
   //事件处理函数
   bindViewTap: function () {
@@ -28,23 +29,38 @@ Page({
     }
   },
   onShow: function () {
+    this.loadData();
+  },
+
+  onReachBottom: function() {
+    if (this.data.hasMoreToLoad) {
+      this.loadData();
+    }
+  },
+
+  loadData: function() {
     var self = this
     wx.showLoading({
       title: '加载中',
     })
+    const length = this.data.numberList.length;
+    const limit = 20;
     const db = wx.cloud.database()
-    db.collection('number').get({
+    db.collection('number').orderBy('createDate', 'desc').skip(length).limit(limit).get({
       success: function (res) {
         wx.hideLoading();
         for (var i = 0; i < res.data.length; i ++) {
           res.data[i].age = self.getAge(res.data[i].birthday)
           res.data[i].relativeTime = new Date(res.data[i].createDate).toRelativeTime()
         }
-
         self.setData({
-          numberList: res.data
+          numberList: length == 0 ? res.data : self.data.numberList.concat(res.data)
         })
-        console.log(self.data.numberList)
+        if (res.data.length < limit) {
+          self.setData({
+            hasMoreToLoad: false,
+          })
+        }
       },
       fail: function(res) {
         wx.hideLoading();
