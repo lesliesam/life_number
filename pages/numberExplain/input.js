@@ -38,6 +38,9 @@ Page({
   },
 
   bindAdd: function (e) {
+    if(this.data.text.length == 0) {
+      return ;
+    }
     var self = this
     wx.showLoading({
       title: '保存中',

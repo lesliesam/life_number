@@ -7,6 +7,27 @@
   padding-right: 15px;
 }
 
+.explainNotes {
+  font-size: 14px;
+  color: darkgrey;
+  margin: 15px;
+  margin-top: 20px;
+}
+
+.expertNotes {
+  font-size: 13px;
+  color: darkgrey;
+  margin: 15px;
+  margin-top: 20px;
+  align-self: flex-start;
+}
+
+.expertAuthor {
+  font-size: 14px;
+  color: cadetblue;
+  margin: 5px;
+}
+
 .explainContainer {
   margin-top: 10px;
   display: flex;
@@ -16,6 +37,10 @@
 }
 
 .explainBlock {
+  margin: 2px;
+}
+
+.expertBlock {
   margin: 2px;
 }
 

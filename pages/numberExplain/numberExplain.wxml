@@ -1,7 +1,7 @@
 <view class='container'>
   <view class='title'>{{title}}为{{numberToExplain}}的性格特征</view>
   <view class='aline'/>
-
+  <view class='explainNotes'>生命数字分析：{{officialNotes == ''?'暂无':officialNotes}}</view>
   <view class='explainContainer'>
     <view wx:for='{{publicTags}}' class='explainBlock' wx:key='publicId'>
       <button wx:if='{{item.isPositive}}' class='positiveBlock'>
@@ -20,7 +20,13 @@
       </button>
     </view>
   </view>
-  
+  <view wx:if='{{expertNotes.length > 0}}' class='expertNotes'>
+    <view>精彩评语:</view>
+    <view wx:for='{{expertNotes}}' class='expertBlock' wx:key='expertId'>
+      <view class='expertAuthor'>"{{item.author}}": {{item.explain}}</view>
+    </view>
+  </view>
+
   <view class='stickAtBottom'>
     <button class='addButton' bindtap='bindAdd'>
       我来写点

@@ -21,7 +21,7 @@
             
           </view>
         </view>
-        <button class='editButton' id='{{index}}' bindtap='editItem'>编辑</button>
+        <button class='editButton' id='{{index}}' bindtap='editItem'>查看</button>
       </view>
       <view class='aline'></view>
     </view>
