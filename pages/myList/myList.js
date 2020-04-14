@@ -29,6 +29,10 @@ Page({
     }
   },
   onShow: function () {
+    this.setData({
+      hasMoreToLoad: true,
+      numberList: [],
+    })
     this.loadData();
   },
 
@@ -90,26 +94,32 @@ Page({
   },
 
   removeItem: function(e) {
-    var id = e.currentTarget.id;
-    wx.showLoading({
-      title: '删除中',
-    })
-
-    const db = wx.cloud.database()
     var self = this;
-    db.collection('number').doc(this.data.numberList[id]._id).remove({
-      success: function(res) {
-        var newList = self.data.numberList
-        newList.splice(id, 1);
-        self.setData({
-          numberList: newList
-        })
-      },
+    wx.showModal({
+      content: '您确认删除此信息吗？',
+      success (res) {
+        if (res.confirm) {
+          var id = e.currentTarget.id;
+          wx.showLoading({
+            title: '删除中',
+          })
 
-      complete: function(res) {
-        wx.hideLoading();
+          const db = wx.cloud.database()
+          db.collection('number').doc(self.data.numberList[id]._id).remove({
+            success: function(res) {
+              var newList = self.data.numberList
+              newList.splice(id, 1);
+              self.setData({
+                numberList: newList
+              })
+            },
+
+            complete: function(res) {
+              wx.hideLoading();
+            }
+          })
+        }
       }
-      
     })
   },
 
