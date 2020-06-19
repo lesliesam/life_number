@@ -25,6 +25,7 @@
       <button class='resultButton' bindtap='primaryNumberTap'>
         <view class='resultTitle'>主性格</view>
         <view class='resultContent'>{{lifeNumberResults.zxg}}</view>
+        <view class='resultEnterIcon'> > </view>
       </button>
     </view>
     <view class='resultRow'> 
@@ -48,6 +49,7 @@
         <button class='resultButton' bindtap='numCombinationTap' id='{{item}}'> 
           <view class='resultTitle'>第{{item}}组</view>
           <view class='resultContent'>{{lifeNumberResults['mm' + item]}}</view>
+          <view class='resultEnterIcon'> > </view>
         </button>
       </view>
       
